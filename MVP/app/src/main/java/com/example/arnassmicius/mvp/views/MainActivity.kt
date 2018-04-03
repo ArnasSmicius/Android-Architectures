@@ -17,6 +17,7 @@ class MainActivity : BaseActivity(), MainContract.View, View.OnClickListener {
 
     override fun init(state: Bundle?) {
         tvHello.setOnClickListener(this)
+        // It's better idea to inject presenter in production code
         mPresenter = MainPresenter()
         mPresenter?.attach(this)
         mPresenter?.loadHelloText()
